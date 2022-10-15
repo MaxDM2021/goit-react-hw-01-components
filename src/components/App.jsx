@@ -1,3 +1,10 @@
+import ProfileCart from './ProfileCart';
+import Section from './Section';
+import user from "./user.json";
+
+
+
+
 export const App = () => {
   return (
     <div
@@ -10,7 +17,9 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+    <Section title="profile">
+    <ProfileCart item={user}/> 
+    </Section>
     </div>
   );
 };
