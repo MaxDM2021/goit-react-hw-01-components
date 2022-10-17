@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function StatisticsList({ items }) {
   return (
-  <ul class="stat-list">
+  <ul className="stat-list">
     {items.map((item) => (
-      <li class="item" key={item.id}
+      <li className="item" key={item.id}
       style={{
-        backgroundColor: {getRandomColor}
+        backgroundColor: getRandomColor()
       }}>
         <Statistics
           label={item.label}
@@ -26,8 +26,9 @@ StatisticsList.propTypes = {
 };
 
 
-function getRandomColor() {
+function getRandomColor () {
   return '#'+Math.floor(Math.random()*16777215).toString(16); 
 }
+
 
 export default StatisticsList;

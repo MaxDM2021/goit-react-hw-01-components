@@ -1,8 +1,17 @@
-import ProfileCart from './ProfileCart';
-import StatisticsList from './StatisticsList';
-import Section from './Section';
 import user from "./user.json";
+import ProfileCart from './ProfileCart';
+
 import data from "./data.json";
+import StatisticsList from './StatisticsList';
+
+import friends from "./friends.json";
+import FriendList from './FriendList';
+
+
+import transactions from "./transactions.json";
+import TransactionsHistory from './TransactionsHistory';
+
+import Section from './Section';
 
 
 
@@ -29,6 +38,15 @@ export const App = () => {
     <Section title="Upload stats">
     <StatisticsList items={data}/> 
     </Section>
+
+    <Section title="List of friends">
+    <FriendList items={friends}/> 
+    </Section>
+
+    <Section title="Transactions History">
+    <TransactionsHistory items={transactions}/> 
+    </Section>
+
     </div>
   );
 };

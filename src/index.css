@@ -1,4 +1,4 @@
-@import-normalize; 
+/* @import-normalize;  */
 /* bring in normalize.css styles */
 /* @import '~node_modules/modern-normalize/modern-normalize.css'; */
 
@@ -50,6 +50,7 @@ box-shadow: 5px 5px 19px -1px #000000;
 text-align: center;
 font-weight: 700;
 font-size: 25px;
+color: #ffff;
 }
 
 .tag,
@@ -103,6 +104,7 @@ li{
   list-style: none;
   font-size: 25px;
   padding: 0;
+  box-shadow: 5px 5px 19px -1px #000000;
   
 }
 
@@ -112,10 +114,141 @@ li{
  flex-direction: column;
  padding: 20px 20px;
  border: 1px solid gray;
+
+}
+
+
+/* ===STATISTICS-END=== */
+
+/* ===FRIENDS=== */
+
+
+
+.item__friends {
+  display: flex;
+  width: 300px;
+  height: 60px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  justify-content: left;
+  border: 2px solid gray;
+  border-radius: 4px;
+  box-shadow: 5px 5px 19px -1px #000000;
+  background-color: rgb(187, 181, 181);
+}
+
+.friends__box {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: left;
+ 
+}
+
+.avatar__friends {
+  display: inline;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.status {
+  display: block;
+  margin-right: 0;
+  align-content: flex-start;
+  
+}
+
+.name__friends{
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+
+}
+
+/* ===TRANSACTIONS=== */
+/* 
+.transaction-history {
+  width: 600px;
+  border: 1px solid gray;
+}
+
+th{
+  background-color: green;
+  color: #ffff;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+td{
+  background-color: #fff;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 400;
+  margin-right: 100px;
+  padding: 10px;
+}
+
+.tr_data{
+  display: flex;
+  justify-content: center;
+} */
+
+
+table {
+  table-layout: fixed;
+  width: 120%;
+  border-collapse: collapse;
+  border: 3px solid gray;
+  margin-top: 40px;
+}
+
+thead th {
+  font-size: 24px;
+  font-weight: 500px;
+}
+
+thead th:nth-child(1) {
+  width: 8%;
+}
+
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 500px;
 }
 
 
 
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
 
+th {
+  letter-spacing: 2px;
+}
 
-/* ===STATISTICS-END=== */
+td {
+  letter-spacing: 1px;
+  margin-right:  20px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
