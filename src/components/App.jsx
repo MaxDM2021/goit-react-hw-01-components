@@ -1,17 +1,17 @@
 import user from "./user.json";
-import ProfileCart from './ProfileCart';
+import Profile from './Profile/Profile';
 
 import data from "./data.json";
-import StatisticsList from './StatisticsList';
+import StatisticsList from './StatisticsList/StatisticsList';
 
 import friends from "./friends.json";
-import FriendList from './FriendList';
+import FriendList from './FriendList/FriendList';
 
 
 import transactions from "./transactions.json";
-import TransactionsHistory from './TransactionsHistory';
+import TransactionsHistory from './TransactionsHistory/TransactionsHistory';
 
-import Section from './Section';
+import Section from './Section/Section';
 
 
 
@@ -32,7 +32,14 @@ export const App = () => {
       }}
     >
     <Section title="Profile">
-    <ProfileCart item={user}/> 
+    <Profile 
+    username={user.username}
+    tag={user.tag}
+    location={user.location}
+    avatar={user.avatar}
+    followers={user.stats.followers}
+    views={user.stats.views}
+    likes={user.stats.likes}/> 
     </Section>
 
     <Section title="Upload stats">

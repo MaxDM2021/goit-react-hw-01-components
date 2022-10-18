@@ -1,22 +1,19 @@
 import PropTypes from 'prop-types';
+import css from "./FriendListItem.module.css";
 
 export default function FriendListItem(props) {
   const { avatar, name, isOnline } = props;
 
   return (
-    <div className="friends__box">
+    <div className={css.friends__box}>
       <div
-        className="status"
+        className={css.status}
         style={{
-          width: '20px',
-          height: '20px',
-          marginRight: '30px',
           backgroundColor: isOnline ? '#39bd18' : '#e61414',
-          borderRadius: '50%',
         }}
       ></div>
-      <img className="avatar__friends" src={avatar} alt={name} width="48" height="48" />
-      <p className="name__friends">{name}</p>
+      <img className={css.avatar__friends} src={avatar} alt={name} width="48" height="48" />
+      <p className={css.name__friends}>{name}</p>
     </div>
   );
 }
@@ -27,5 +24,3 @@ FriendListItem.propTypes = {
   isOnline: PropTypes.bool.isRequired,
 };
 
-
-// backgroundColor: isOnline ? '#39bd18' : '#e61414',

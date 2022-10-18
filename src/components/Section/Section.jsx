@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from "./Section.module.css"
 
 function Section ({ title, children }) {
     return (
     <div>
-     {title && <h2 class="title">{title}</h2>}
+     {title && <h2 className={css.title}>{title}</h2>}
      {children}
     </div>
     );

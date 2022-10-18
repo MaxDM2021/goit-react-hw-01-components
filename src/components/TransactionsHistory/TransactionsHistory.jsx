@@ -1,14 +1,16 @@
-import Transaction from "./Transaction";
+import Transaction from "components/Transaction/Transaction";
 import PropTypes from 'prop-types';
+import css from "./TransactionsHistory.module.css";
+
 
 function TransactionsHistory({ items }) {
   return (
-<table className="transaction-history">
+<table className={css.table}>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
+      <th className={css.thead__th}>Type</th>
+      <th className={css.thead__th}>Amount</th>
+      <th className={css.thead__th}>Currency</th>
     </tr>
   </thead>
 
@@ -19,6 +21,7 @@ function TransactionsHistory({ items }) {
           type={item.type}
           amount={item.amount}
           currency={item.currency}
+
           />
      ))}
       </tbody>

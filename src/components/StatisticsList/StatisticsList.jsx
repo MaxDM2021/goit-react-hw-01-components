@@ -1,11 +1,12 @@
-import Statistics from "./Statistics";
+import Statistics from "components/Statistics/Statistics";
 import PropTypes from 'prop-types';
+import css from "./StatisticsList.module.css"
 
 function StatisticsList({ items }) {
   return (
-  <ul className="stat-list">
+  <ul className={css.stat__list}>
     {items.map((item) => (
-      <li className="item" key={item.id}
+      <li className={css.item} key={item.id}
       style={{
         backgroundColor: getRandomColor()
       }}>
