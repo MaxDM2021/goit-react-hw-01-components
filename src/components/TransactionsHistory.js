@@ -14,14 +14,12 @@ function TransactionsHistory({ items }) {
 
   <tbody>
   {items.map((item) => (
-    <tr className="item__transaction" key={item.id}>
-
  <Transaction
+         key={item.id}
           type={item.type}
           amount={item.amount}
           currency={item.currency}
           />
-    </tr>
      ))}
       </tbody>
 </table>

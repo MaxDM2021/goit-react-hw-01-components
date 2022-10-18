@@ -242,11 +242,13 @@ th {
 
 td {
   letter-spacing: 1px;
-  margin-right:  20px;
+
 }
 
 tbody td {
+  
   text-align: center;
+
 }
 
 tfoot th {

@@ -4,11 +4,11 @@ export default function Transaction(props) {
   const { type, amount, currency } = props;
 
   return (
-    <div>
+    <tr className="item__transaction">
       <td>{type}</td>
       <td>{amount}</td>
       <td>{currency}</td>
-      </div>
+    </tr>
   );
 }
 
