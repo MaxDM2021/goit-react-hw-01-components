@@ -1,19 +1,16 @@
-import user from "./user.json";
+import user from './user.json';
 import Profile from './Profile/Profile';
 
-import data from "./data.json";
+import data from './data.json';
 import StatisticsList from './StatisticsList/StatisticsList';
 
-import friends from "./friends.json";
+import friends from './friends.json';
 import FriendList from './FriendList/FriendList';
 
-
-import transactions from "./transactions.json";
+import transactions from './transactions.json';
 import TransactionsHistory from './TransactionsHistory/TransactionsHistory';
 
 import Section from './Section/Section';
-
-
 
 export const App = () => {
   return (
@@ -28,32 +25,35 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-    <Section title="Profile">
-    <Profile 
-    username={user.username}
-    tag={user.tag}
-    location={user.location}
-    avatar={user.avatar}
-    followers={user.stats.followers}
-    views={user.stats.views}
-    likes={user.stats.likes}/> 
-    </Section>
+      <Section title="Profile">
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          followers={user.stats.followers}
+          views={user.stats.views}
+          likes={user.stats.likes}
+        />
+      </Section>
 
-    <Section title="Upload stats">
+      {/* <Section title="Upload stats">
     <StatisticsList items={data}/> 
-    </Section>
+    </Section> */}
 
-    <Section title="List of friends">
-    <FriendList items={friends}/> 
-    </Section>
+      <StatisticsList title="Upload stats" items={data} />
+      {/* <StatisticsList items={data} /> */}
 
-    <Section title="Transactions History">
-    <TransactionsHistory items={transactions}/> 
-    </Section>
+      <Section title="List of friends">
+        <FriendList items={friends} />
+      </Section>
 
+      <Section title="Transactions History">
+        <TransactionsHistory items={transactions} />
+      </Section>
     </div>
   );
 };

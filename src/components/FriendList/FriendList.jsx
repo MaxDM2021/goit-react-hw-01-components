@@ -1,31 +1,44 @@
-import FriendListItem from "components/FriendListItem/FriendListItem";
+// import FriendListItem from "components/FriendListItem/FriendListItem";
 import PropTypes from 'prop-types';
-import css from "./FriendList.module.css"
+import { FaAtom } from 'react-icons/fa';
+import { iconSize } from 'constants';
+// import css from './FriendList.module.css';
+import {
+  FrList,
+  ItemFriends,
+  FriendsBox,
+  StatusFriends,
+  AvatarFriends,
+  NameFriends,
+} from './FriendList.styled';
 
 function FriendList({ items }) {
   return (
-  <ul className={css.friend__list}>
-    {items.map((item) => (
-      <li className={css.item__friends} key={item.id}
-    >
-        <FriendListItem
-          avatar={item.avatar}
-          name={item.name}
-          isOnline={item.isOnline}
-        />
-      </li>
-    ))}
-  </ul>
+    <FrList>
+      {items.map(({ avatar, name, isOnline, id }) => (
+        <ItemFriends key={id}>
+          <FriendsBox>
+            <StatusFriends eventOnline={isOnline}>
+              <FaAtom size={iconSize.sm} />
+            </StatusFriends>
+            <AvatarFriends src={avatar} alt={name} width="48" height="48" />
+            <NameFriends>{name}</NameFriends>
+          </FriendsBox>
+        </ItemFriends>
+      ))}
+    </FrList>
   );
 }
 
-
-
 FriendList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-    })),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ),
 };
-
 
 export default FriendList;

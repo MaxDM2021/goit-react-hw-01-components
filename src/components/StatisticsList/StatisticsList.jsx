@@ -1,28 +1,34 @@
-import Statistics from "components/Statistics/Statistics";
+// import Statistics from "components/Statistics/Statistics";
 import PropTypes from 'prop-types';
 import css from "./StatisticsList.module.css"
 
-function StatisticsList({ items }) {
-  return (
+function StatisticsList({ items, title }) {
+  
+  return ( 
+    <div>
+         {title && <h2 className={css.title}>{title}</h2>}
   <ul className={css.stat__list}>
-    {items.map((item) => (
-      <li className={css.item} key={item.id}
+    {items.map(({label, percentage, id}) => (
+      <li className={css.item} key={id}
       style={{
         backgroundColor: getRandomColor()
       }}>
-        <Statistics
-          label={item.label}
-          percentage={item.percentage}
-        />
+      <div>
+      <span className={css.label}>{label}</span>
+      <span className={css.percentage}>{percentage}%</span>
+      </div>
       </li>
     ))}
   </ul>
+  </div>
   );
 }
 
 StatisticsList.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        percentage: PropTypes.number.isRequired,
     })),
 };
 

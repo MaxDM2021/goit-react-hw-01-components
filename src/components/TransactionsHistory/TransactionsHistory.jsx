@@ -1,4 +1,4 @@
-import Transaction from "components/Transaction/Transaction";
+// import Transaction from "components/Transaction/Transaction";
 import PropTypes from 'prop-types';
 import css from "./TransactionsHistory.module.css";
 
@@ -15,14 +15,12 @@ function TransactionsHistory({ items }) {
   </thead>
 
   <tbody>
-  {items.map((item) => (
- <Transaction
-         key={item.id}
-          type={item.type}
-          amount={item.amount}
-          currency={item.currency}
-
-          />
+  {items.map(({id, type, amount, currency}) => (
+    <tr className={css.tr} key = {id}>
+    <td className={css.td}>{type}</td>
+    <td className={css.td}>{amount}</td>
+    <td className={css.td}>{currency}</td>
+  </tr>
      ))}
       </tbody>
 </table>
