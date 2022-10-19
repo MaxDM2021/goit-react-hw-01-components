@@ -35,9 +35,9 @@ export const StatusFriends = styled.div`
   align-content: flex-start;
   width: 20px;
   height: 20px;
-  color: ${({eventOnline, theme}) => {
-return eventOnline? theme.colors.green: theme.colors.red;
-}};
+  color: ${({ eventOnline, theme }) => {
+    return eventOnline ? theme.colors.green : theme.colors.red;
+  }};
   border-radius: 50%;
 `;
 
@@ -53,7 +53,3 @@ export const NameFriends = styled.p`
   font-weight: 600;
 `;
 
-
-
-// ${({friends}) =>
-//     friends.map(({isOnline}) => ({isOnline} ? '#39bd18' : '#e61414'))};

@@ -45,7 +45,7 @@ export const App = () => {
     </Section> */}
 
       <StatisticsList title="Upload stats" items={data} />
-      {/* <StatisticsList items={data} /> */}
+      <StatisticsList items={data} />
 
       <Section title="List of friends">
         <FriendList items={friends} />
